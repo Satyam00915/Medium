@@ -3,6 +3,7 @@ import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
 import { jwt, sign } from "hono/jwt";
 import { hashPassword, verifyPassword } from "../Hash/hash";
+import { signinSchema, signUpSchema } from "../zod/zod";
 
 const User = new Hono<{
   Bindings: {
@@ -17,6 +18,12 @@ User.post("/signup", async (c) => {
   }).$extends(withAccelerate());
 
   const body = await c.req.json();
+
+  const { success } = signUpSchema.safeParse(body);
+  if (!success) {
+    c.status(400);
+    return c.json({ message: "Invalid request" });
+  }
 
   const findUser = await prisma.user.findUnique({
     where: {
@@ -58,6 +65,12 @@ User.post("/signin", async (c) => {
   });
 
   const body = await c.req.json();
+
+  const { success } = signinSchema.safeParse(body);
+  if (!success) {
+    c.status(400);
+    return c.json({ message: "Invalid Inputs" });
+  }
 
   const response = await prisma.user.findUnique({
     where: {
