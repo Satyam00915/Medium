@@ -1,9 +1,8 @@
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
-import { verify } from "hono/jwt";
-import { blogSchema } from "../zod/zod";
 import { authChecker } from "../Middleware/middleware";
+import { blogSchema } from "../zod/zod";
 
 const Blog = new Hono<{
   Bindings: {
