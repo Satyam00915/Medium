@@ -18,6 +18,7 @@ User.post("/signup", async (c) => {
   }).$extends(withAccelerate());
 
   const body = await c.req.json();
+  console.log(body);
 
   const { success } = signUpSchema.safeParse(body);
   if (!success) {
