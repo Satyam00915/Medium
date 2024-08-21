@@ -20,8 +20,12 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
         postinputs
       );
       const jwt = response.data.token;
-      localStorage.setItem("token", jwt);
-      navigate("/blogs");
+      if (jwt) {
+        localStorage.setItem("token", jwt);
+        navigate("/blogs");
+      } else {
+        alert("User Not Found!");
+      }
     } catch (error) {
       console.log(error);
     }
