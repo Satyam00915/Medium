@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@satyam0915/mediumcommon": "^1.0.1",
+    "@satyam0915/mediumcommon": "^1.0.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "axios": "^1.7.4",
     "react": "^18.3.1",

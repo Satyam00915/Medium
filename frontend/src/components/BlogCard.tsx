@@ -28,14 +28,18 @@ const BlogCard = ({ author, title, content, publishedDate }: BlogCardProps) => {
         <div className="avatar placeholder">
           <div
             style={{ backgroundColor: avatarColor }}
-            className="text-black w-8 rounded-full"
+            className="text-black w-8 rounded-full "
           >
-            <span className="text-xs">{author.split("")[0]}</span>
+            <span className="text-xl text-white relative bottom-1">
+              {author.split("")[0]}
+            </span>
           </div>
         </div>
         <div className="flex flex-col">
           <div className="font-semibold text-lg">{author}</div>
-          <div className="text-md text-gray-500">{publishedDate}</div>
+          <div className="text-md text-gray-500">
+            {publishedDate.split("T")[0]}
+          </div>
         </div>
       </div>
       <div>
