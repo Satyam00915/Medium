@@ -3,10 +3,11 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../config";
+import { SignUpInput } from "@satyam0915/mediumcommon";
 
 const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const [showPassword, setShowpassword] = useState(false);
-  const [postinputs, setPostinputs] = useState({
+  const [postinputs, setPostinputs] = useState<SignUpInput>({
     name: "",
     email: "",
     password: "",
