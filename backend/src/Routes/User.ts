@@ -3,7 +3,7 @@ import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
 import { sign } from "hono/jwt";
 import { hashPassword, verifyPassword } from "../Hash/hash";
-import { signinSchema, signUpSchema } from "../zod/zod";
+import { signUpSchema, signinSchema } from "@satyam0915/mediumcommon";
 
 const User = new Hono<{
   Bindings: {

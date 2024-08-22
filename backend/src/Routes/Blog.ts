@@ -2,8 +2,7 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
 import { authChecker } from "../Middleware/middleware";
-import { blogSchema } from "../zod/zod";
-
+import { blogSchema } from "@satyam0915/mediumcommon";
 const Blog = new Hono<{
   Bindings: {
     DATABASE_URL: string;
@@ -115,7 +114,20 @@ Blog.get("/bulk", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
 
-  const allBlogs = await prisma.post.findMany();
+  const allBlogs = await prisma.post.findMany({
+    select: {
+      title: true,
+      content: true,
+      id: true,
+      createdAt: true,
+      author: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
+    },
+  });
   return c.json({
     allBlogs,
   });
