@@ -1,7 +1,7 @@
 {
   "name": "@satyam0915/mediumcommon",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.0.2",
+  "main": "dist/zod/zod.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
