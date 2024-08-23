@@ -34,8 +34,8 @@ This application provides a platform similar to Medium for reading, creating, an
 ![SignUp](/frontend/public/Signup.png)
 _SignUp Page_
 ![Signin](/frontend/public/SIgnin.png)
-_Dashboard Page_
+_SignIn Page_
 ![Dashboard](/frontend/public/Dashboard.png)
-_Upload Page_
+_Dashboard Page_
 ![Create Blog](/frontend/public/Create.png)
-_Contributions Page_
+_Upload Page_
