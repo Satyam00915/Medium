@@ -23,6 +23,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
       const jwt = response.data.token;
       if (jwt) {
         localStorage.setItem("token", jwt);
+        localStorage.setItem("User", response.data.User.name);
         navigate("/blogs");
       } else {
         alert("User Not Found!");

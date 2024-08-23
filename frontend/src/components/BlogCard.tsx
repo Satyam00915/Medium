@@ -38,7 +38,7 @@ const BlogCard = ({
           <div className="avatar placeholder">
             <div
               style={{ backgroundColor: avatarColor }}
-              className="text-black w-8 rounded-full "
+              className="text-black w-8 rounded-full"
             >
               <span className="text-xl text-white relative bottom-1">
                 {author.split("")[0]}
@@ -61,9 +61,8 @@ const BlogCard = ({
               WebkitLineClamp: 3,
               WebkitBoxOrient: "vertical",
             }}
-          >
-            {content}
-          </div>
+            dangerouslySetInnerHTML={{ __html: content }} // Renders the HTML content
+          />
         </div>
       </div>
     </Link>
