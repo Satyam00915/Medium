@@ -1,6 +1,6 @@
 import Appbar from "../components/Appbar";
 import BlogCard from "../components/BlogCard";
-import useBlogs from "../hooks";
+import { useBlogs } from "../hooks";
 import BlogCardSkeleton from "../Skeleton/Blogskeleton";
 
 const Blogs = () => {
@@ -20,6 +20,7 @@ const Blogs = () => {
           blogs.map((blog) => {
             return (
               <BlogCard
+                id={blog.id}
                 title={blog.title}
                 content={blog.content}
                 author={blog.author.name}
