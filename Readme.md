@@ -31,8 +31,6 @@ This application provides a platform similar to Medium for reading, creating, an
 
 ## SCREENSHOTS
 
-![Resource Hub Home](./)
-_Home Page_
 ![SignUp](/frontend/public/Signup.png)
 _SignUp Page_
 ![Signin](/frontend/public/SIgnin.png)
