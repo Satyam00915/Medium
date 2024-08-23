@@ -84,7 +84,7 @@ Blog.put("/", async (c) => {
   }
 });
 
-Blog.post("/:id", async (c) => {
+Blog.get("unique/:id", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
@@ -93,6 +93,18 @@ Blog.post("/:id", async (c) => {
   const blog = await prisma.post.findFirst({
     where: {
       id: id,
+    },
+    select: {
+      id: true,
+      title: true,
+      content: true,
+      createdAt: true,
+      author: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
     },
   });
 
