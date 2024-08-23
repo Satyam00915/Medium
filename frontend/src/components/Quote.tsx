@@ -3,8 +3,8 @@ const Quote = ({ type }: { type: "signup" | "signin" }) => {
     <div className="flex flex-col gap-5 p-20">
       <div className="font-semibold text-4xl ">
         {type == "signin"
-          ? "The assistance I received was prompt and insightful. The team made suremy experience was seamless and stress-free."
-          : "The customer service I received was exceptional. The support team wentabove and beyond to address my concerns."}
+          ? "The assistance I received was prompt and insightful. The team made sure my experience was seamless and stress-free."
+          : "The customer service I received was exceptional. The support team went above and beyond to address my concerns."}
       </div>
       <div>
         <div className="font-semibold">
