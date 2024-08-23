@@ -14,7 +14,7 @@ This application provides a platform similar to Medium for reading, creating, an
 
 ## LIVE LINK
 
-You can view the live application at: [MEDIUM](https://medium-k79s.vercel.app/signup)
+You can view the live application at: [MEDIUM](https://medium-satyam.vercel.app/signup)
 
 ## Features
 
