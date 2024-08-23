@@ -29,7 +29,7 @@ User.post("/signup", async (c) => {
   try {
     const hashpswd = await hashPassword(body.password);
 
-    const user = await prisma.user.create({
+    const User = await prisma.user.create({
       data: {
         name: body.name,
         email: body.email,
@@ -42,10 +42,10 @@ User.post("/signup", async (c) => {
       },
     });
 
-    const token = await sign({ userId: user.id }, c.env.JWT_SECRET);
+    const token = await sign({ userId: User.id }, c.env.JWT_SECRET);
 
     return c.json({
-      user,
+      User,
       token: token,
       message: "User Created",
     });
