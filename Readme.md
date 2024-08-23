@@ -12,6 +12,10 @@ Welcome to the Medium-like Blog Application! This project is a full-stack applic
 
 This application provides a platform similar to Medium for reading, creating, and managing blog posts. It features a rich text editor for creating posts, dynamic avatars, and efficient data fetching and caching.
 
+## LIVE LINK
+
+You can view the live application at: [MEDIUM]("https://medium-k79s.vercel.app/signup)
+
 ## Features
 
 - **User Authentication:** Secure login and signup functionality.
